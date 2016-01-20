@@ -26,6 +26,9 @@ class NominTest {
 
         def scimGrp = mapper.map(institution, SCIMGroup.class, appCtx)
 
+        assert scimGrp.id == institution.name
+        assert scimGrp.displayName == institution.displayName
+
         assert scimGrp.members
         assert scimGrp.members[0].id == 'member1'
         assert scimGrp.members[0].displayName == 'Member Number 1'
