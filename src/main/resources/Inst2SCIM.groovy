@@ -1,4 +1,3 @@
-import org.nomin.entity.*
 import com.example.domain.Institution
 import com.okta.scim.util.model.Membership
 import com.okta.scim.util.model.SCIMGroup
