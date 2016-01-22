@@ -4,6 +4,7 @@ import com.okta.scim.util.model.SCIMGroup
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.nomin.NominMapper
+import org.nomin.context.SpringContext
 import org.nomin.core.Nomin
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.SpringApplicationConfiguration
@@ -24,7 +25,7 @@ class NominTest {
         institution.name = 'name'
         institution.displayName = 'displayName'
 
-        def scimGrp = mapper.map(institution, SCIMGroup.class, appCtx)
+        def scimGrp = mapper.map(institution, SCIMGroup.class, new SpringContext(appCtx))
 
         assert scimGrp.id == institution.name
         assert scimGrp.displayName == institution.displayName
